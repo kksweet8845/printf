@@ -5,6 +5,7 @@
 #include <math.h>
 #include <limits.h>
 #include <string.h>
+#include <wchar.h>
 
 
 
@@ -318,7 +319,6 @@ void print_buffer() {
     }
     fputc('\n', stdout);
 }
-#define DEBUG
 
 #ifdef DEBUG
 #define outString(str, width, pos, padding) \
@@ -778,7 +778,7 @@ void _printf(const uint8_t* format, ...) {
     finish_parsing:
             do {
                 memset(buffer, '\0', sizeof(buffer));
-                static char* string = buffer + sizeof(buffer) - 1;
+                char* string = buffer + sizeof(buffer) - 1;
                 unsigned char is_longlong = 0;
                 unsigned char is_negative = 0;
                 int diff;

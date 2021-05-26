@@ -35,6 +35,9 @@ int frexp10(int, double);
 
 void _printf(const uint8_t* format, ...);
 
+
+#define __darwin_ptrdiff_t int
+
 // static int read_int(const unsigned char* *pstr);
 
 
